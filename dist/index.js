@@ -5876,7 +5876,7 @@ module.exports = class Post{
     }
 
     async send() {
-        debug(this.repository);
+        debug(this.context);
 
         const devpaperRootJsonDescPath = this.repository.contents_url.replace('{+path}', 'devpaper.json');
 
