@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.12](https://github.com/repapved/devpaper-post-action/compare/v1.2.11...v1.2.12) (2021-03-21)
+
+
+### Bug Fixes
+
+* atob fix error ([4331ae9](https://github.com/repapved/devpaper-post-action/commit/4331ae9fdf34b413abc2a7a1d0470fa06ce1d249))
+
 ### [1.2.11](https://github.com/repapved/devpaper-post-action/compare/v1.2.10...v1.2.11) (2021-03-21)
 
 
