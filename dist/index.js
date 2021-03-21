@@ -5828,29 +5828,57 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
+/***/ 806:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const core = __nccwpck_require__(186);
+
+module.exports.debug = function (data) {
+  const msg =
+    typeof data === "object" ? JSON.stringify(data, null, 2) : String(data);
+  return core.debug(msg);
+};
+
+
+/***/ }),
+
 /***/ 351:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const github = __nccwpck_require__(438);
 const core = __nccwpck_require__(186);
-
-const toStr = data => JSON.stringify(data, null, 2);
+const Post = __nccwpck_require__(303);
 
 async function run() {
+  const DEVPAPER_TOKEN = core.getInput("DEVPAPER_TOKEN");
 
-    const DEVPAPER_TOKEN = core.getInput('DEVPAPER_TOKEN');
-    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+  const kit = github.getOctokit(DEVPAPER_TOKEN);
 
-    core.debug(toStr({ DEVPAPER_TOKEN, GITHUB_TOKEN }))
-
-    const kit = github.getOctokit(DEVPAPER_TOKEN);
-
-    core.debug('Context:\n');
-    core.debug(toStr(github.context))
-
+  await new Post(kit, github.context).send();
 }
 
-run().catch(err => core.setFailed(err));
+run().catch((err) => core.setFailed(err));
+
+
+/***/ }),
+
+/***/ 303:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const debug = __nccwpck_require__(806);
+
+class Post{
+    constructor(kit, context) {
+        this.kit = kit;
+        this.context = context;
+    }
+
+    async send() {
+        debug('Post send to devpaper.fun 🚚')
+    }
+}
+
+module.exports = Post;
 
 /***/ }),
 
