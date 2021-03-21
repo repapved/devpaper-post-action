@@ -1,0 +1,29 @@
+{
+  "name": "devpaper-post-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist",
+    "release": "npm run build && standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repapved/devpaper-post-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/repapved/devpaper-post-action/issues"
+  },
+  "homepage": "https://github.com/repapved/devpaper-post-action#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "standard-version": "^9.1.1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
+}
