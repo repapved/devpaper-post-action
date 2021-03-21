@@ -1,20 +1,13 @@
-const github = require('@actions/github');
-const core = require('@actions/core');
-
-const toStr = data => JSON.stringify(data, null, 2);
+const github = require("@actions/github");
+const core = require("@actions/core");
+const Post = require("./post");
 
 async function run() {
+  const DEVPAPER_TOKEN = core.getInput("DEVPAPER_TOKEN");
 
-    const DEVPAPER_TOKEN = core.getInput('DEVPAPER_TOKEN');
-    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+  const kit = github.getOctokit(DEVPAPER_TOKEN);
 
-    core.debug(toStr({ DEVPAPER_TOKEN, GITHUB_TOKEN }))
-
-    const kit = github.getOctokit(DEVPAPER_TOKEN);
-
-    core.debug('Context:\n');
-    core.debug(toStr(github.context))
-
+  await new Post(kit, github.context).send();
 }
 
-run().catch(err => core.setFailed(err));
+run().catch((err) => core.setFailed(err));
