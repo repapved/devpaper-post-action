@@ -5834,12 +5834,19 @@ function wrappy (fn, cb) {
 const github = __nccwpck_require__(438);
 const core = __nccwpck_require__(186);
 
+const toStr = data => JSON.stringify(data, null, 2);
+
 async function run() {
 
-    const token = core.getInput('GITHUB_TOKEN');
-    const kit = github.getOctokit(token);
+    const DEVPAPER_TOKEN = core.getInput('DEVPAPER_TOKEN');
+    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
 
-    console.log('Kit init with context', github.context);
+    core.debug(toStr({ DEVPAPER_TOKEN, GITHUB_TOKEN }))
+
+    const kit = github.getOctokit(DEVPAPER_TOKEN);
+
+    core.debug('Context:\n');
+    core.debug(toStr(github.context))
 
 }
 
