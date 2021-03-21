@@ -1,6 +1,6 @@
 const debug = require('./debug');
 
-class Post{
+module.exports = class Post{
     constructor(kit, context) {
         this.kit = kit;
         this.context = context;
@@ -10,5 +10,3 @@ class Post{
         debug('Post send to devpaper.fun 🚚')
     }
 }
-
-module.exports = Post;
