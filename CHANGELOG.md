@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.11](https://github.com/repapved/devpaper-post-action/compare/v1.2.10...v1.2.11) (2021-03-21)
+
+
+### Bug Fixes
+
+* json root parse ([13a31ea](https://github.com/repapved/devpaper-post-action/commit/13a31eae0c1e622b0f9b50e61bb20262ffb3fe41))
+
 ### [1.2.10](https://github.com/repapved/devpaper-post-action/compare/v1.2.9...v1.2.10) (2021-03-21)
 
 
