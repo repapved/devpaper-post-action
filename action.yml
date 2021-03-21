@@ -1,0 +1,8 @@
+name: "Devpaper post action"
+description: "An action for posting to devpaper.fun"
+branding:
+  icon: "gift"
+  color: orange
+runs:
+  using: "node12"
+  main: "dist/index.js"
