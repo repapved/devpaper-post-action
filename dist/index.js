@@ -5881,7 +5881,7 @@ module.exports = class Post{
         const devpaperRootJsonDescPath = this.repository.contents_url.replace('{+path}', 'devpaper.json');
 
         const devpaperRootJsonDesc = await fetch(devpaperRootJsonDescPath).then(r => r.json());
-        const devpaperRootJson = JSON.parse(atob(devpaperRootJsonDesc.content));
+        const devpaperRootJson = JSON.parse(Buffer.from(devpaperRootJsonDesc.content, 'base64').toString());
 
         debug(devpaperRootJson);
 
