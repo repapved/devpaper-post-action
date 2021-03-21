@@ -5872,7 +5872,7 @@ module.exports = class Post{
     constructor(kit, context) {
         this.kit = kit;
         this.context = context;
-        this.repository = context.repository;
+        this.repository = context.payload.repository;
     }
 
     async send() {
