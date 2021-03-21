@@ -5833,7 +5833,7 @@ function wrappy (fn, cb) {
 
 const core = __nccwpck_require__(186);
 
-module.exports.debug = function (data) {
+module.exports = function (data) {
   const msg =
     typeof data === "object" ? JSON.stringify(data, null, 2) : String(data);
   return core.debug(msg);
@@ -5867,7 +5867,7 @@ run().catch((err) => core.setFailed(err));
 
 const debug = __nccwpck_require__(806);
 
-class Post{
+module.exports = class Post{
     constructor(kit, context) {
         this.kit = kit;
         this.context = context;
@@ -5877,8 +5877,6 @@ class Post{
         debug('Post send to devpaper.fun 🚚')
     }
 }
-
-module.exports = Post;
 
 /***/ }),
 
