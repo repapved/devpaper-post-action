@@ -5874,6 +5874,7 @@ module.exports = class Post{
     }
 
     async send() {
+        debug(this.context);
         debug('Post send to devpaper.fun 🚚')
     }
 }
