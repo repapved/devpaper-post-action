@@ -5876,7 +5876,7 @@ module.exports = class Post{
     async send() {
         debug(this.context);
 
-        const res = this.kit.repos.getContent({ path: 'devpaper.json' });
+        const res = await this.kit.repos.getContent({ path: 'devpaper.json' });
 
         debug(res);
 
